@@ -1,0 +1,2 @@
+D:\Documents\Uni\DevelopmentProject\Battleships\battleships\Battleship\Battleship\obj\Debug\Battleship.csprojResolveAssemblyReference.cache
+D:\Documents\Uni\DevelopmentProject\Battleships\battleships\Battleship\Battleship\bin\Debug\Battleship.exe.config
