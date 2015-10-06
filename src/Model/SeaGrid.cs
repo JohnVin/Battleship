@@ -134,6 +134,8 @@ public class SeaGrid : ISeaGrid
 				dCol = 0;
 			}
 
+
+
 			//place ship's tiles in array and into ship object
 			int i = 0;
 			for (i = 0; i <= size - 1; i++) {
@@ -149,10 +151,9 @@ public class SeaGrid : ISeaGrid
 
 			newShip.Deployed(direction, row, col);
 		} catch (Exception e) {
-			newShip.Remove();
+			//newShip.Remove();
 			//if fails remove the ship
 			throw new ApplicationException(e.Message);
-
 		} finally {
 			if (Changed != null) {
 				Changed(this, EventArgs.Empty);
