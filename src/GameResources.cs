@@ -20,6 +20,8 @@ public static class GameResources
 
 	private static void LoadImages()
 	{
+
+
 		//Backgrounds
 		NewImage("Menu", "main_page.jpg");
 		NewImage("Discovery", "discover.jpg");

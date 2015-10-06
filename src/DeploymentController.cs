@@ -67,6 +67,14 @@ static class DeploymentController
 			GameController.HumanPlayer.RandomizeDeployment();
 		}
 
+		if (SwinGame.PointInRect (SwinGame.MousePosition (), 700, 10, 90, 30))
+		{
+			if (SwinGame.MouseClicked (MouseButton.LeftButton))
+			{
+				GameController.EndCurrentState ();
+			}
+		}
+
 		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
 			ShipName selected = default(ShipName);
 			selected = GetShipMouseIsOver();
@@ -140,6 +148,8 @@ static class DeploymentController
 			//SwinGame.DrawText("L/R", Color.Gray, GameFont("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP)
 		}
 
+
+
 		//DrawShips
 		foreach (ShipName sn in Enum.GetValues(typeof(ShipName))) {
 			int i = 0;
@@ -165,6 +175,8 @@ static class DeploymentController
 		}
 
 		SwinGame.DrawBitmap(GameResources.GameImage("RandomButton"), RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP);
+		SwinGame.DrawRectangle (Color.Black, true, 700, 10, 90, 30);
+		SwinGame.DrawText ("Quit", Color.White, 730, 20);
 
 		UtilityFunctions.DrawMessage();
 	}
