@@ -52,7 +52,7 @@ public class Player : IEnumerable<Ship>
 			}
 		}
 
-		RandomizeDeployment();
+		OrganiseDeployment();
 	}
 
 	/// <summary>
@@ -230,6 +230,42 @@ public class Player : IEnumerable<Ship>
 					placementSuccessful = false;
 				}
 			} while (!placementSuccessful);
+		}
+	}
+
+	public void OrganiseDeployment()
+	{
+		//bool placementSuccessful = false;
+		Direction heading = Direction.UpDown;
+
+		//for each ship to deploy in shipist
+
+		foreach (ShipName shipToPlace in Enum.GetValues(typeof(ShipName)))
+		{
+			if (shipToPlace == ShipName.AircraftCarrier)
+			{
+				PlayerGrid.MoveShip (0, 0, shipToPlace, heading);
+			}
+
+			if (shipToPlace == ShipName.Battleship)
+			{
+				PlayerGrid.MoveShip (0, 1, shipToPlace, heading);
+			}
+
+			if (shipToPlace == ShipName.Destroyer)
+			{
+				PlayerGrid.MoveShip (0, 2, shipToPlace, heading);
+			}
+
+			if (shipToPlace == ShipName.Submarine)
+			{
+				PlayerGrid.MoveShip (0, 3, shipToPlace, heading);
+			}
+
+			if (shipToPlace == ShipName.Tug)
+			{
+				PlayerGrid.MoveShip (0, 4, shipToPlace, heading);
+			}
 		}
 	}
 }
