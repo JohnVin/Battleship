@@ -106,7 +106,7 @@ public class SeaGrid : ISeaGrid
 	public void MoveShip(int row, int col, ShipName ship, Direction direction)
 	{
 		Ship newShip = _Ships[ship];
-		newShip.Remove();
+		//newShip.Remove();  Stops ships from dissapearing when clickingo n other ships during deployment
 		AddShip(row, col, direction, newShip);
 	}
 
