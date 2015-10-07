@@ -52,7 +52,10 @@ public class Player : IEnumerable<Ship>
 			}
 		}
 
-		OrganiseDeployment();
+		if (this.GetType () == typeof(Player))
+			OrganiseDeployment ();
+		else
+			RandomizeDeployment ();
 	}
 
 	/// <summary>
